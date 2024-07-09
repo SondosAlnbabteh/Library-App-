@@ -1,0 +1,54 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgb(42, 98, 144);
+  }
+  
+  
+  .logo {
+    height: 3rem; 
+    border-radius: 3rem
+  }
+  
+ 
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  nav ul li {
+    margin: 1rem;
+    margin-right: 4rem;
+  }
+  
+ 
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #ddd;
+    border-bottom: 0.3rem solid #6A515E;
+  }
+  
+  @media (max-width : 888px) {
+    nav ul {
+      gap: 0.5rem; 
+    }
+
+     nav ul li {
+      margin: 0.2rem;
+      margin-right: 0.5rem;
+    }
+
+  }

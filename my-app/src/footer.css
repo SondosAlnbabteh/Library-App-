@@ -1,0 +1,49 @@
+/****************footer****************/
+
+.footer-distributed{
+    background-color: rgb(42, 98, 144);
+
+   color: azure;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 50px 50px 60px 50px;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+
+.footer-distributed i{
+    margin-bottom: 8px;
+    color: #ffff;
+}
+
+.contact a:hover{
+color: rgb(226, 193, 145);
+}
+
+ 
+/******end footer**/
+
+
+   /**********Responsive footer**********/
+   @media (max-width : 888px) {
+    
+   footer{
+    position: static;
+}
+
+.footer-distributed  
+{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center; 
+   
+}
+
+   }
+
+/**********end Responsive footer**********/
