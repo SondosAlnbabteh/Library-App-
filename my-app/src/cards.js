@@ -3,7 +3,7 @@ import './cards.css';
 import React, { useEffect, useState } from "react";
 
 function Cards() {
-    const [counter, setCounter] = useState(0);
+   
     const [person, setPerson] = useState({
         books: [
             {

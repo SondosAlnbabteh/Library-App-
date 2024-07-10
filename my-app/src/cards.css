@@ -2,7 +2,11 @@
     --surface-color: #fff;
     --curve: 40;
   }
-  
+  .App h1{
+    text-align: center;
+    margin: 3rem;
+    font-family: Garamond, serif;
+  }
   * {
     box-sizing: border-box;
   }
