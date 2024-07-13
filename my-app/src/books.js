@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./books.css";
-import { databaseURL } from './firebaseCon.js'; // استيراد عنوان URL لقاعدة البيانات
-import { useNavigate } from 'react-router-dom';
+import { databaseURL } from './firebaseCon.js'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit,faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Books() {
 
   const [title, setTitle] = useState("");
-  const [author, setAauthor] = useState("");
+  const [author, setAuthor] = useState("");
   const [isbn, setIsbn] = useState("");
   const [books, setBooks] = useState([]); // حالة لتخزين الكتب المسترجعة من Firebase
   const [selectedBook, setSelectedBook] = useState(null); // الكتاب المحدد للتعديل
@@ -76,14 +75,14 @@ function Books() {
   const handleEdit = (book) => {
     setSelectedBook(book);
     setTitle(book.bookTitle);
-    setAauthor(book.bookAuthor);
+    setAuthor(book.bookAuthor);
     setIsbn(book.bookIsbn);
   };
 
   const cancelEdit = () => {
     setSelectedBook(null);
     setTitle("");
-    setAauthor("");
+    setAuthor("");
     setIsbn("");
   };
 
@@ -116,7 +115,7 @@ function Books() {
       alert("Book updated successfully!");
       setSelectedBook(null);
       setTitle("");
-      setAauthor("");
+      setAuthor("");
       setIsbn("");
     } catch (error) {
       console.error('Error updating book:', error);
@@ -161,7 +160,7 @@ function Books() {
         <input
           type='text'
           value={author}
-          onChange={(e) => setAauthor(e.target.value)}
+          onChange={(e) => setAuthor(e.target.value)}
           placeholder="Enter author"
           className="input-field"
         />
