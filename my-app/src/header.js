@@ -33,6 +33,8 @@ function Header() {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact </Link></li>
+                    <li><Link to="/books">Books </Link></li>
+
                     {sessionStorage.getItem("name")  ? 
                      <li><Link to="/" onClick={handleLogout}> <FontAwesomeIcon icon={faRightToBracket} /> logout </Link></li> : <li><Link to="/sign-up"> <FontAwesomeIcon icon={faUserPlus} /> login </Link></li>  }
                    

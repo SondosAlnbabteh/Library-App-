@@ -7,6 +7,7 @@ import Header from './header';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sign from './sign-up.js';
 import Footer from './footer.js';
+import Books from './books.js';
 
 
 function App(){
@@ -20,6 +21,8 @@ function App(){
               <Route path='/' element={<Home />}/>
               <Route path='/about' element={<About/>}/>
               <Route path='/contact' element={<Contact/>}/>
+              <Route path='/books' element={<Books/>}/>
+
               <Route path='/sign-up' element={<Sign/> }/> 
         </Routes> 
       </div>

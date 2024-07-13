@@ -4,17 +4,12 @@ import "./footer.css";
 
 function Footer() {
     return (
-      <footer class="footer-distributed">
-      
-      <div class="contact">
+      <footer className="footer-distributed">
      
-       
-       <p>Contact</p>
-      </div>
 
       <div>
         <FontAwesomeIcon icon={faLocationDot} />
-        <i class="fa-solid fa-location-dot"></i>
+        <i className="fa-solid fa-location-dot"></i>
         <p>Zarqa Jordan</p>
       </div>
 
