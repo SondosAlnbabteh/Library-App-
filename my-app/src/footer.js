@@ -1,33 +1,30 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import "./footer.css";
+
 
 function Footer() {
     return (
-      <footer className="footer-distributed">
-     
-
-      <div>
-        <FontAwesomeIcon icon={faLocationDot} />
-        <i className="fa-solid fa-location-dot"></i>
+      <footer className="flex flex-col items-center p-10 space-y-4 text-white bg-blue-800 footer-distributed">
+      <div className="flex items-center space-x-4">
+        <FontAwesomeIcon icon={faLocationDot} className="text-white" />
         <p>Zarqa Jordan</p>
       </div>
 
-      <div>
-      <FontAwesomeIcon icon={faPhone} />
+      <div className="flex items-center space-x-4">
+        <FontAwesomeIcon icon={faPhone} className="text-white" />
         <p>+962 786 114 062</p>
       </div>
-      
-      <div>
-      <FontAwesomeIcon icon={faEnvelope} />
+
+      <div className="flex items-center space-x-4">
+        <FontAwesomeIcon icon={faEnvelope} className="text-white" />
         <p>salehSondos135@gmail.com</p>
       </div>
 
-      <div>
-       <p>Copyright © 2024 SondosAlnbabteh.<p> rights reserved.</p></p>
-     </div>
-  
- </footer>
+      <div className="text-center">
+        <p>Copyright © 2024 SondosAlnbabteh.</p>
+        <p>All rights reserved.</p>
+      </div>
+    </footer>
     );
 }
 

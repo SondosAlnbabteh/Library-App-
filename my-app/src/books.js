@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import "./books.css";
+
 import { databaseURL } from './firebaseCon.js'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit,faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -146,57 +146,54 @@ function Books() {
   };
 
   return (
-    <div className="books-container">
-    <h1>Books</h1>
-    <div className="form-container">
-    
-        <input
-          type='text'
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Enter title"
-          className="input-field"
-        />
-        <input
-          type='text'
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-          placeholder="Enter author"
-          className="input-field"
-        />
-        <input
-          type='text'
-          value={isbn}
-          onChange={(e) => setIsbn(e.target.value)}
-          placeholder="Enter ISBN"
-          className="input-field"
-        />
-         {selectedBook ? (
-          <div>
-            <button onClick={saveEditedData} className="save-button">Save Changes</button>
-            <button onClick={cancelEdit} className="cancel-button">Cancel</button>
+    <div className="max-w-lg p-5 mx-auto my-8 bg-gray-100 rounded-lg shadow-lg books-container">
+    <h1 className="mb-4 text-2xl font-bold">Books</h1>
+    <div className="mt-5 form-container">
+      <input
+        type="text"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Enter title"
+        className="w-full p-2 mb-3 text-lg border border-gray-300 rounded input-field"
+      />
+      <input
+        type="text"
+        value={author}
+        onChange={(e) => setAuthor(e.target.value)}
+        placeholder="Enter author"
+        className="w-full p-2 mb-3 text-lg border border-gray-300 rounded input-field"
+      />
+      <input
+        type="text"
+        value={isbn}
+        onChange={(e) => setIsbn(e.target.value)}
+        placeholder="Enter ISBN"
+        className="w-full p-2 mb-3 text-lg border border-gray-300 rounded input-field"
+      />
+      {selectedBook ? (
+        <div>
+          <button onClick={saveEditedData} className="w-full p-3 mt-4 text-white bg-pink-700 rounded save-button">Save Changes</button>
+          <button onClick={cancelEdit} className="w-full p-3 mt-4 text-white bg-pink-200 rounded cancel-button">Cancel</button>
+        </div>
+      ) : (
+        <button onClick={saveData} className="w-full p-3 mt-4 text-white bg-pink-700 rounded save-button">Save Data</button>
+      )}
+    </div>
+    <div className="books-list grid gap-4 mt-20 grid-cols-auto-fill min-w-[250px]">
+      {books.filter(book => !book.isDeleted).map(book => (
+        <div className="p-4 bg-gray-100 border border-gray-300 rounded-lg shadow-md book-card" key={book.id}>
+          <h3 className="mb-2 text-lg font-bold">{book.bookTitle}</h3>
+          <p className="mb-1 text-gray-600">Author: {book.bookAuthor}</p>
+          <p className="mb-1 text-gray-600">ISBN: {book.bookIsbn}</p>
+          <div className="flex justify-end mt-2 icon-container">
+            <FontAwesomeIcon icon={faEdit} className='ml-2 text-lg cursor-pointer icon hover:text-pink-600' onClick={() => handleEdit(book)} /> 
+            <FontAwesomeIcon icon={faTrash} className='ml-2 text-lg cursor-pointer icon hover:text-pink-600' onClick={() => handleDelete(book.id)}/>
           </div>
-        ) : (
-          <button onClick={saveData} className="save-button">Save Data</button>
-        )}
-    
+        </div>
+      ))}
     </div>
-    <div className="books-list">
-        {books.filter(book => !book.isDeleted).map(book => (
-        <div className="book-card" key={book.id}>
-         <h3>{book.bookTitle}</h3>
-         <p>Author: {book.bookAuthor}</p>
-         <p>ISBN: {book.bookIsbn}</p>
-          <div className="icon-container">
-            <FontAwesomeIcon icon={faEdit} className='icon' onClick={() => handleEdit(book)} /> 
-            <FontAwesomeIcon icon={faTrash} className='icon' onClick={() => handleDelete(book.id)}/>
-         
-         </div>
-    </div>
-  ))}
-</div>
-
   </div>
+  
   );
 } 
 

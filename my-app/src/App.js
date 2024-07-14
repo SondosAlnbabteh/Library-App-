@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sign from './sign-up.js';
 import Footer from './footer.js';
 import Books from './books.js';
-
+import "./index.js";
 
 function App(){
   return(
